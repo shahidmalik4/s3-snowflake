@@ -20,3 +20,9 @@ Before running the project, ensure you have the following installed:
 - Ensure the CSV file is uploaded to the specified path in the S3 bucket.
 
 ## Running the Project
+
+#### Cloning the Repo
+To clone this repository, run the following command:
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+```
