@@ -24,5 +24,5 @@ Before running the project, ensure you have the following installed:
 #### Cloning the Repo
 To clone this repository, run the following command:
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/shahidmalik4/s3-snowflake.git
 ```
