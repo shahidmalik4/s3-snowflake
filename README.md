@@ -2,14 +2,6 @@
 
 This project demonstrates how to extract data from an Amazon S3 bucket, transform it using Pandas, and load it into a Snowflake database using the Snowflake Python connector.
 
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Environment Variables](#environment-variables)
-- [License](#license)
-
 ## Prerequisites
 
 Before running the project, ensure you have the following installed:
