@@ -1,0 +1,32 @@
+-- CREATE ACCOUNTS
+USE ROLE ACCOUNTADMIN;
+
+-- Create a warehouse
+CREATE WAREHOUSE IF NOT EXISTS S3_WH WITH WAREHOUSE_SIZE = 'LARGE';
+
+-- Create a database
+CREATE DATABASE IF NOT EXISTS PIPELINE;
+
+-- Show grants on the warehouse
+SHOW GRANTS ON WAREHOUSE S3_WH;
+
+-- Create a user named user with specified properties if the user doesn't already exist
+CREATE USER IF NOT EXISTS <USERNAME>
+  PASSWORD = <PASSWORD>            -- Set the user's password
+  DEFAULT_WAREHOUSE = 'S3_WH' 	   -- Set the default warehouse for the user
+  DEFAULT_ROLE = 'SYSADMIN'        -- Set the default role for the user
+  MUST_CHANGE_PASSWORD = FALSE;    -- User does not need to change their password upon first login
+
+-- Replace <USERNAME> with the actual username
+GRANT ROLE SYSADMIN TO USER <USERNAME>-- Use quotes if the username has special characters
+GRANT USAGE ON WAREHOUSE S3_WH TO ROLE SYSADMIN;
+GRANT ALL ON DATABASE PIPELINE TO ROLE SYSADMIN;
+
+-- Switch to the newly created role
+USE ROLE SYSADMIN;
+
+-- Create a schema in the database
+CREATE SCHEMA IF NOT EXISTS PIPELINE.S3_SCHEMA;
+
+-- Grant privileges on the schema to the role
+GRANT USAGE ON SCHEMA PIPELINE.S3_SCHEMA TO ROLE SYSADMIN;
