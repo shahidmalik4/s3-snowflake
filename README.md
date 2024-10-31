@@ -26,3 +26,13 @@ To clone this repository, run the following command:
 ```bash
 git clone https://github.com/shahidmalik4/s3-snowflake.git
 ```
+
+#### Install the required packages
+```bash
+pip install -r requirements.txt
+```
+
+#### Run the ETL script
+```bash
+python main.py
+```
